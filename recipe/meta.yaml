@@ -1,6 +1,6 @@
 {% set name = "cgroupspy" %}
-{% set version = "0.1.6" %}
-{% set sha256 = "fb4aac7938499cff53c260112fb0759a54fb5f8bad89d9be0326c70a7619821a" %}
+{% set version = "0.2.1" %}
+{% set sha256 = "2a9e578566b99ac05c452d23044ea3061c9f9445752360c2ce4e9f2439fa1577" %}
 
 package:
   name: {{ name|lower }}
@@ -14,7 +14,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -38,7 +38,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Python library for managing cgroups'
+  summary: Python library for managing cgroups
 
   description: |
     Python library for managing cgroups
