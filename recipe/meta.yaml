@@ -24,6 +24,8 @@ requirements:
     - python >=3.7
 
 test:
+  requires:
+    - pip
   imports:
     - cgroupspy
     - cgroupspy.contenttypes
@@ -32,6 +34,8 @@ test:
     - cgroupspy.nodes
     - cgroupspy.trees
     - cgroupspy.utils
+  commands:
+    - pip check
 
 about:
   home: https://github.com/cloudsigma/cgroupspy
