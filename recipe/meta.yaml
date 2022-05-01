@@ -1,20 +1,18 @@
 {% set name = "cgroupspy" %}
 {% set version = "0.2.1" %}
-{% set sha256 = "2a9e578566b99ac05c452d23044ea3061c9f9445752360c2ce4e9f2439fa1577" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cgroupspy-{{ version }}.tar.gz
+  sha256: 2a9e578566b99ac05c452d23044ea3061c9f9445752360c2ce4e9f2439fa1577
 
 build:
   noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -24,18 +22,12 @@ requirements:
     - python >=3.7
 
 test:
-  requires:
-    - pip
   imports:
     - cgroupspy
-    - cgroupspy.contenttypes
-    - cgroupspy.controllers
-    - cgroupspy.interfaces
-    - cgroupspy.nodes
-    - cgroupspy.trees
-    - cgroupspy.utils
   commands:
     - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/cloudsigma/cgroupspy
