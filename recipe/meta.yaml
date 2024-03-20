@@ -1,5 +1,5 @@
 {% set name = "cgroupspy" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/cgroupspy-{{ version }}.tar.gz
-  sha256: d42b4666b852e65e20b8864747fe86e27c04d3b09d44c76f18cca9b12c957475
+  sha256: 8ee941c7ab9234a0b17a81b0b26487f7f1031f78b7a24cdd8eed1b5fa5970496
 
 build:
   noarch: python
